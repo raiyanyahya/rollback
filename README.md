@@ -2,11 +2,11 @@
 
 A github action to manually rollback the master branch to the previous commit, creating a timestamped backup branch for recovery.
 
-## ⚠ Warning: 
+## ⚠ Warning 
 
 This action force pushes to the master branch, which can cause issues for other collaborators. Use with caution and ensure you understand the implications of removing a commit before proceeding.
-This action is for developers and teams who want and immediate `rollback` of their master branch. Running this action will change master and `rewrite` the commit history. Changes will be lost `forever`.
-Be very `careful` and `sure` whe you use this. 
+This action is for developers and teams who want and immediate `rollback` of their master branch. Running this action will change master and `rewrite` the commit history. Changes will be lost **`forever`**.
+Be very **`careful`** and **`sure`** whe you use this. **DO NOT** use this action if you are still unclear as to what this does.
 
 ## Why
 
