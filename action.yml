@@ -1,0 +1,28 @@
+name: 'Manual Rollback Action'
+description: 'Checkout master, back it up, and rollback to the previous commit erasing the current commit history'
+author: 'Raiyan Yahya'
+branding:
+  icon: 'skip-back'
+  color: 'red'
+
+inputs:
+  github_token:
+    description: 'GitHub token'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+      shell: bash
+
+    - name: Run manual rollback script
+      run: |
+        chmod +x ./entrypoint.sh
+        ./entrypoint.sh
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      shell: bash
