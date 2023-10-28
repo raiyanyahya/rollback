@@ -19,7 +19,9 @@ if [ "${GITHUB_EVENT_NAME}" != "workflow_dispatch" ]; then
   error "This action can only be run as a workflow dispatch."
 fi
 
+
 # Authenticate with GitHub
+# Commenting this out. It seems no longer needed because we are using the GH_TOKEN variable
 #echo "Authenticating with GitHub..."
 #echo "${GITHUB_TOKEN}" | gh auth login --with-token || error "Failed to authenticate with GitHub."
 
@@ -39,6 +41,7 @@ timestamp=$(date +"%Y%m%d-%H%M%S")
 backup_branch="backup-${timestamp}"
 git checkout master
 git checkout -b "${backup_branch}" || error "Failed to create a backup branch."
+#dont know why but you need to set the url with a token and repo name.
 git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
 git push origin "${backup_branch}" || error "Failed to push the backup branch."
 
