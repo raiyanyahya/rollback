@@ -21,9 +21,8 @@ runs:
 
     - name: Run manual rollback script
       run: |
-        ls
-        chmod +x ./entrypoint.sh
-        ./entrypoint.sh
+        chmod +x ${GITHUB_ACTION_PATH}/entrypoint.sh
+        ${GITHUB_ACTION_PATH}/entrypoint.sh
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
       shell: bash
