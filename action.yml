@@ -21,6 +21,7 @@ runs:
 
     - name: Run manual rollback script
       run: |
+        ls
         chmod +x ./entrypoint.sh
         ./entrypoint.sh
       env:
