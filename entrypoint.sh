@@ -20,8 +20,8 @@ if [ "${GITHUB_EVENT_NAME}" != "workflow_dispatch" ]; then
 fi
 
 # Authenticate with GitHub
-echo "Authenticating with GitHub..."
-echo "${GITHUB_TOKEN}" | gh auth login --with-token || error "Failed to authenticate with GitHub."
+#echo "Authenticating with GitHub..."
+#echo "${GITHUB_TOKEN}" | gh auth login --with-token || error "Failed to authenticate with GitHub."
 
 # Set up repository
 echo "Setting up repository..."
