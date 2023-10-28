@@ -49,6 +49,8 @@ jobs:
 
     - name: Use Manual Rollback Action
       uses: raiyanyahya/rollback@master
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
