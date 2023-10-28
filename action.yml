@@ -15,8 +15,8 @@ runs:
   steps:
     - name: Set up Git
       run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "username@users.noreply.github.com"
       shell: bash
 
     - name: Run manual rollback script
