@@ -39,6 +39,7 @@ timestamp=$(date +"%Y%m%d-%H%M%S")
 backup_branch="backup-${timestamp}"
 git checkout master
 git checkout -b "${backup_branch}" || error "Failed to create a backup branch."
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
 git push origin "${backup_branch}" || error "Failed to push the backup branch."
 
 # Rollback master to the previous commit and force push
